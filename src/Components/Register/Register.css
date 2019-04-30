@@ -1,0 +1,85 @@
+.registerContainer {
+    background-color: #ffffff;
+    margin-top: 85px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.companyLogoContainer {
+    width: 250px;
+    height: 250px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 8px 8px 6px rgb(0, 0, 0, 0.3);
+}
+
+.companyLogo {
+    width: 230px;
+    height: 230px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.required {
+    margin-top: 25px;
+    color: #d3d3d3;
+    font-size: 20px;
+}
+
+.inputsContainer {
+    margin-top: 20px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0px 15px;
+}
+
+input {
+    border: none;
+    height: 30px;
+}
+
+line {
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    width: 100%
+}
+
+input::-webkit-input-placeholder {
+    color: #d3d3d3;
+}
+
+.registerButton {
+    margin-top: 35px;
+    width: 50%;
+    height: 60px;
+    background-color: #3366cc;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3)
+}
+
+.registerContainer button:hover {
+    background-color: #1f3d7a
+  }
+
+
+  
+.registerContainer button:active {
+    background-color: #1f3d7a;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
+    transform: translateY(4px);
+  }

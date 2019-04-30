@@ -1,0 +1,129 @@
+.backgroundProfilePageContainer {
+    background-color: #3366cc;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePageContainer {
+    margin-top: 85px;
+    background-color: #ffffff;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.companyLogo {
+    width: 230px;
+    height: 230px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cancel {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 22px;
+    background-color: #3366cc;
+    border-radius: 50%;
+    border: 7px solid #d3d3d3;
+    border-style: double;
+    z-index: 1;
+}
+
+.accountInfoContainer {
+    margin-top: 50px;
+    border: 10px solid #d3d3d3;
+    border-style: double;
+    height: 236px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.detailNamesContainer {
+    padding-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 50%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.detailNamesContainer p {
+    height: 20px;
+    margin: 0px;
+}
+
+.inputUpdateContainer {
+    padding-right: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 50%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.inputUpdateContainer input {
+    border: 2px solid #d3d3d3;
+    width: 100%;
+    font-size: 18px;
+    height: 25px;
+    overflow: scroll;
+}
+
+.inputUpdateContainer h1 {
+    font-size: 18px;
+    width: 100%;
+    height: 25px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.editSubmitButton {
+    margin-top:15px;
+    margin-bottom: 15px;
+    width: 50%;
+    height: 60px;
+    background-color: #3366cc;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3)
+}
+
+.profilePageContainer button:hover {
+    background-color: #1f3d7a
+}
+
+.profilePageContainer button:active {
+    background-color: #1f3d7a;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
+    transform: translateY(4px);
+}

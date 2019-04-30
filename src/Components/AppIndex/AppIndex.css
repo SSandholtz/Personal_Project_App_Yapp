@@ -1,0 +1,21 @@
+.appIndexContainer {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+}
+
+.searchBar {
+    text-align: center;
+    font-size: 20px;
+}

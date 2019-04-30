@@ -1,0 +1,41 @@
+.createFormContainer {
+    height: 230px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 85px;
+    right: 20px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.3);
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.createAppButton {
+    background-color: #3366cc;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3);
+    margin-top: 25px;
+}
+
+.createFormContainer button:hover {
+    background-color: #1f3d7a
+  }
+
+
+  
+.createFormContainer button:active {
+    background-color: #1f3d7a;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
+    transform: translateY(4px);
+  }
