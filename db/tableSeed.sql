@@ -29,7 +29,7 @@ CREATE TABLE "app" (
 CREATE TABLE "analytics" (
 	"analytics_id" serial NOT NULL,
 	"date" TIMESTAMP NOT NULL,
-	"clicked_id" integer NOT NULL,
+	"clicked_id" integer,
 	CONSTRAINT analytics_pk PRIMARY KEY ("analytics_id")
 ) WITH (
   OIDS=FALSE

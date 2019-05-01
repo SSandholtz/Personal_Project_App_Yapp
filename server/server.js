@@ -28,20 +28,22 @@ app.use(session({
 
 app.post('/auth/login', authCtrl.login)
 app.post('/api/app', appCtrl.createApp)
+app.post('/auth/logout', authCtrl.logout)
 app.post('/auth/register', authCtrl.register)
+app.post('/api/downloads', appCtrl.trackDownloads)
 // app.post('/api/feedback', appCtrl.addFeedback)
 
-app.post('/auth/logout', authCtrl.logout)
 app.get('/api/searchApps', appCtrl.searchApps)
 app.get('/api/searchAccApps', accCtrl.searchAccApps)
 app.get('/api/getAccInfo', accCtrl.getAccInfo)
 app.get('/api/getAppById', appCtrl.getAppById)
-// app.get('/api/analytics', appCtrl.getAppAnalytics)
+app.get('/api/session', accCtrl.checkSessionOnRefresh)
+app.get('/api/analytics', appCtrl.getAppAnalytics)
 app.get('/api/getAllAppStartingLetters', appCtrl.getAllAppsStartingLetters)
 
 app.put('/api/account', accCtrl.updateAccInfo)
 // app.put('/api/app', appCtrl.updateAppDetails)
 // app.put('/api/feedback', appCtrl.updateFeedback)
 
-// app.delete(`/api/app`, accCtrl.deleteAccApp)
+app.delete(`/api/accApp`, appCtrl.deleteApp)
 // app.delete('/api/feedback', appCtrl.deleteFeedback)

@@ -28,3 +28,10 @@
     z-index: 1;
     
 }
+
+@media (min-width: 900px) {
+    .accHomeContainer {
+        padding-left: 200px;
+        padding-right: 200px;
+    }   
+}

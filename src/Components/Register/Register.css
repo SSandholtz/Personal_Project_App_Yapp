@@ -83,3 +83,16 @@ input::-webkit-input-placeholder {
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
     transform: translateY(4px);
   }
+
+  @media (min-width: 900px) {
+    .registerContainer {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    .inputsContainer {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.3)
+    }
+}

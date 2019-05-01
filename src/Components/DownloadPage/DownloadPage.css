@@ -1,10 +1,80 @@
-.downloadPageContainer {
+.downloadPageBackgroundContainer {
     margin-top: 85px;
+    padding: 15px;
     height: 100%;
     width: 100%;
-    background-color: yellow;
+    background-color: #3366cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.downloadPageContainer {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+}
+
+.downloadPageContainer h1 {
+    margin: 0px;
+    margin-top: 25px;
+    font-size: 22px;
+}
+
+.downloadPageContainer h3 {
+    margin: 0px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+
+.downloadButton {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    width: 40%;
+    height: 60px;
+    background-color: #3366cc;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3)
+}
+
+.downloadPageContainer button:hover {
+    background-color: #1f3d7a
+}
+  
+.downloadPageContainer button:active {
+    background-color: #1f3d7a;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
+    transform: translateY(4px);
+}
+
+.analyticsButton {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 60px;
+    background-color: #3366cc;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3)
+}
+
+@media (min-width: 900px) {
+    .downloadPageContainer {
+        padding-left: 150px;
+        padding-right: 150px;
+    }   
 }

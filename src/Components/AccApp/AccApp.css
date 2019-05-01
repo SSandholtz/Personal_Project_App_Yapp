@@ -36,7 +36,7 @@
     width: 90%;
 }
 
-.accAppImgLinkContainer {
+.appLogoContainer {
     height: 300px;
     width: 300px;
     border: 1px solid black;
@@ -81,8 +81,6 @@
     background-color: #1f3d7a
   }
 
-
-  
 .accAppContainer button:active {
     background-color: #1f3d7a;
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);

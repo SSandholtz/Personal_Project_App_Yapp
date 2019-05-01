@@ -13,6 +13,16 @@ module.exports = {
         res.status(200).send(accInfo)
     },
 
+    checkSessionOnRefresh: (req, res) => {
+        if (req.session.user) {
+            res.status(200).send({
+                loggedIn: true,
+                userData: req.session.user
+            })
+        }
+        else res.status(200).send({message: 'Please Login'})
+    },
+
     updateAccInfo: async (req, res) => {
         let { email, company_logo } = req.body
         let { id } = req.session.user

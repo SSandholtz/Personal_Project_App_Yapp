@@ -3,16 +3,25 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import './NavBar.css'
-import { logout } from '../../ducks/accReducer'
+import { logout, checkSessionOnRefresh } from '../../ducks/accReducer'
 
 class NavBar extends Component {
 
-    constructor () {
-        super ()
+    constructor (props) {
+        super (props)
 
         this.state = {
+            app_logo: props.appReducer.app.app_logo,
             showDropDownMenu: false,
             showHam: true
+        }
+    }
+
+    componentDidMount () {
+        const { loggedIn } = this.props.accReducer.account
+        console.log(loggedIn)
+        if (!loggedIn) {
+            this.props.checkSessionOnRefresh()
         }
     }
 
@@ -27,6 +36,12 @@ class NavBar extends Component {
         this.props.logout()
     }
 
+    handleOnError() {
+        this.setState({
+            app_logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJftYqJsvhphX6OOjKMjbwllPKR70rAjXcpsP3tQ8XM7-tqRm4"
+        })
+    }
+
     render () {
         const { showDropDownMenu, showHam } = this.state
         const { loggedIn, company_logo, id } = this.props.accReducer.account
@@ -37,7 +52,7 @@ class NavBar extends Component {
                     { loggedIn ?
                     <Link to={`/ProfilePage/${id}`} >
                         <div className="navBarCompanyLogoContainer">
-                            <img className="navBarCompanyLogo" onError="https://www.in-bioinnovation.org/wp-content/uploads/2016/02/no-image-found-300x300.jpg" src={company_logo} alt=""></img>
+                            <img className="navBarCompanyLogo" onError={() => this.handleOnError()} src={company_logo} alt=""></img>
                         </div>
                     </Link>
                     :
@@ -109,4 +124,4 @@ class NavBar extends Component {
 
 const mapState = (reduxState) => reduxState
 
-export default connect(mapState, { logout }) (NavBar)
+export default connect(mapState, { logout, checkSessionOnRefresh }) (NavBar)

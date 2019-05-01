@@ -112,4 +112,11 @@
     background-color: #1f3d7a;
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
     transform: translateY(4px);
-  }
+}
+
+@media (min-width: 900px) {
+    .loginContainer {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}

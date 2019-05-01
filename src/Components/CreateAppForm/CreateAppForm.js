@@ -20,7 +20,7 @@ class CreateAppForm extends Component {
     }
 
     createAppStuffs = (app_name, app_logo, app_download_link, createAppFormDisplay, newToCancel) => {
-        if (app_name !== '' && app_logo !== '' && app_download_link !== '') {
+        if (app_name !== '' && app_download_link !== '') {
         this.props.createApp(app_name, app_logo, app_download_link)
         this.props.showCreateAppFormDisplay(createAppFormDisplay, newToCancel)
         }
@@ -28,7 +28,7 @@ class CreateAppForm extends Component {
             Swal.fire({
                 type: 'error',
                 title: 'Error!',
-                text: 'It Appears That One Or More Fields Is Empty.',
+                text: 'It Appears That One Or Required More Fields Is Empty.',
                 timer: 4000
             })
         }
@@ -50,7 +50,7 @@ class CreateAppForm extends Component {
                 <input 
                 placeholder="App Logo"  
                 onChange={(e) => this.setState({ potentialLogo: e.target.value })} 
-                value={app_logo}>
+                value={potentialLogo}>
                 </input>
 
                 <line />

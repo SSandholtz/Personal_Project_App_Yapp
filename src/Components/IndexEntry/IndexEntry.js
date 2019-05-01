@@ -6,13 +6,6 @@ import './IndexEntry.css'
 import { searchApps } from '../../ducks/appReducer'
 
 class IndexEntry extends Component {
-    constructor (props) {
-        super (props)
-
-        this.state = {
-            app_name: props.app.app_name
-        }
-    }
 
     render () {
         const { app_id, app_name } = this.props.app
@@ -21,7 +14,6 @@ class IndexEntry extends Component {
                 <Link to={`/DownloadPage/${app_id}`}>
                     {app_name}
                 </Link>
-                {/* <line /> */}
             </div>
         )
     }

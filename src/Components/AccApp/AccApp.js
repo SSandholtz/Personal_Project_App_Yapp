@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import './AccApp.css'
+import Swal from 'sweetalert2'
+import { deleteApp } from '../../ducks/accReducer'
 
 class AccApp extends Component {
     constructor (props) {
@@ -12,6 +14,10 @@ class AccApp extends Component {
             publicOrPrivate: false,
             app_logo: props.appReducer.app.app_logo
         }
+    }
+
+    handleDelete (app_id) {
+        this.props.deleteApp(app_id)
     }
 
     handleOnError() {
@@ -30,11 +36,12 @@ class AccApp extends Component {
                     <p className="appName"> {app_name} </p>
                     <line className="underline"/>
                         <Link to={`/Download/${app_id}`}>
-                            <div className="accAppImgLinkContainer">
+                            <div className="appLogoContainer">
                                     <img
                                         className="appLogo"
                                         onError={() => this.handleOnError()}
                                         src={app_logo}
+                                        alt=""
                                     />
                             </div>
                         </Link>
@@ -45,7 +52,29 @@ class AccApp extends Component {
                         >
                             { publicOrPrivate ? 'Public' : 'Private'}
                         </button>
-                        <button className="accAppButtons"> Delete </button>
+                        <button className="accAppButtons" 
+                        onClick={
+                            () => Swal.fire({title: 'Are you sure?',
+                            text: "You won't be able to revert this!",
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes'
+                            })
+                            .then((result) => {
+                                if (result.value) {
+                                    this.handleDelete(app_id)
+                                    Swal.fire(
+                                    'Deleted!',
+                                    'Your app has been deleted.',
+                                    'success'
+                                    )
+                                }
+                            })
+                        }>
+                        Delete 
+                        </button>
                     </div>
                     <div className="deleteConfirmationContainer"></div>
                 </div>
@@ -56,4 +85,4 @@ class AccApp extends Component {
 
 const mapState = (reduxState) => reduxState
 
-export default connect(mapState) (AccApp)
+export default connect( mapState, { deleteApp } ) (AccApp)

@@ -1,0 +1,89 @@
+.appAnalyticsContainer {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backToDownloadButton {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 60px;
+    background-color: #3366cc;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3)
+}
+
+.graphContainer {
+    height: 100%;
+    width: 80%;
+}
+
+.appAnalyticsContainer button:hover {
+    background-color: #1f3d7a
+}
+  
+.appAnalyticsContainer button:active {
+    background-color: #1f3d7a;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.7);
+    transform: translateY(4px);
+}
+
+.weeklyNewsletter {
+    height: 330px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+    padding: 25px;
+}
+
+.dot {
+    margin-top: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.allNews {
+    overflow: scroll;
+}
+
+.news {
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.news h3 {
+    width:80%;
+    margin: 0px;
+    margin-left: 25px;
+}
+
+.lineBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.allNews::-webkit-scrollbar { width: 0 !important }
+
+@media (min-width: 900px) {
+    .backToDownloadButton {
+        width: 40%;
+    }   
+}

@@ -25,6 +25,13 @@ export default class LandingPage extends Component {
                     </section>
                 </div>
                 <div className="divider"></div>
+                <div className="lowerBackgroundContainer">
+                    <section className="about">
+                        <h1> About </h1>
+                        <line/>
+                        <span> We Let developers do things by communicating with other developers and yeah stuff like that. Go do some stuff. </span>
+                    </section>
+                </div>
             </div>
         )
     }

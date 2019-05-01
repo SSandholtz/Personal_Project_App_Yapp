@@ -18,3 +18,10 @@
     margin-top: 10px;
     border: 1px solid #000000;
 }
+
+@media (min-width: 900px) {
+    .indexEntryBlock {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
