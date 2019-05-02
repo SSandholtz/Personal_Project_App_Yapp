@@ -9,8 +9,6 @@
 
 .accHomeContainer h1 {
     margin-top: 25px;
-    text-decoration: underline;
-    text-decoration-color: rgb(0, 0, 0, .4)
 }
 
 .createButton {
@@ -34,4 +32,11 @@
         padding-left: 200px;
         padding-right: 200px;
     }   
+}
+
+@media (min-width: 1200px) {
+    .accHomeContainer {
+        padding-left: 300px;
+        padding-right: 300px;
+    }  
 }

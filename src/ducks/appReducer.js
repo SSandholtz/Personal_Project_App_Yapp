@@ -8,7 +8,7 @@ const initalState = {
         app_logo: '',
         app_download_link: '',
         app_download_date: [],
-        app_private: true,
+        visibility: true,
         app_feedback: '',
     },
     apps: [],
@@ -23,6 +23,7 @@ const SEARCH_APPS = 'SEARCH_APPS'
 const GET_ALL_APP_STARTING_LETTERS = 'GET_ALL_APP_STARTING_LETTERS'
 const GET_ANALYTICS = 'GET_ANALYTICS'
 const TRACK_DOWNLOADS = 'TRACK_DOWNLOADS'
+const CHANGE_PRIVACY = 'CHANGE_PRIVACY'
 
 export function createApp ( app_name, app_logo, app_download_link ) {
     let app = axios.post('/api/app', { app_name, app_logo, app_download_link } ).then(res => {
@@ -31,16 +32,6 @@ export function createApp ( app_name, app_logo, app_download_link ) {
     return {
         type: CREATE_APP,
         payload: app
-    }
-}
-
-export function trackDownloads (app_id) {
-    let downloads = axios.post('/api/downloads', { app_id }).then(res => {
-        return res.data
-    })
-    return {
-        type: TRACK_DOWNLOADS,
-        payload: downloads
     }
 }
 
@@ -85,6 +76,26 @@ export function getAppDownloads (app_id) {
     }
 }
 
+export function trackDownloads (app_id) {
+    let downloads = axios.post('/api/downloads', { app_id }).then(res => {
+        return res.data
+    })
+    return {
+        type: TRACK_DOWNLOADS,
+        payload: downloads
+    }
+}
+
+export function changePrivacy (app_id) {
+    let privacy = axios.put('/api/app', { app_id }).then(res => {
+        return res.data
+    })
+    return {
+        type: CHANGE_PRIVACY,
+        payload: privacy
+    }
+}
+
 export default function reducer (state = initalState, action) {
     switch (action.type) {
         
@@ -118,12 +129,18 @@ export default function reducer (state = initalState, action) {
         case GET_ALL_APP_STARTING_LETTERS + '_FULFILLED':
             return { ...state, startingLetters: [ ...action.payload ], loading: false }
 
-        //Get App Analytics
+        // Get App Analytics
         case GET_ANALYTICS + '_PENDING':
             return { ...state, loading: true }
         case GET_ANALYTICS + '_FULFILLED':
-        console.log(action.payload)
             return { ...state, app: { ...state.app, app_download_date: [ ...action.payload ] }, loading: false }
+
+        // Change App Privacy
+        case CHANGE_PRIVACY + '_PENDING':
+            return { ...state, loading: true }
+        case CHANGE_PRIVACY + '_FULFILLED':
+        console.log(action.payload)
+            return { ...state, app: { ...state.app, visibility: action.payload[0].visibility, loading: false }}
         default:
             return state
     }

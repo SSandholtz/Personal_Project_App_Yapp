@@ -13,15 +13,21 @@ class Register extends Component {
             email: '',
             password: '',
             company_name: '',
-            company_logo: ''
+            company_logo: props.accReducer.account.company_logo
         }
+    }
+
+    handleOnError() {
+        this.setState({
+            app_logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJftYqJsvhphX6OOjKMjbwllPKR70rAjXcpsP3tQ8XM7-tqRm4"
+        })
     }
 
     handleRegister(email, password, company_name, company_logo) {
         if (email !== '' && password !== '' &&  company_name !== '') {
-            this.props.register(email, password, company_name, company_logo).then(res => {
+            this.props.register(email, password, company_name, company_logo).then(() => {
                 if (this.props.accReducer.account.loggedIn) {
-                    this.props.history.push(`/accHomePage`)
+                    this.props.history.push(`/AccHomePage`)
                 }
             })
         }
@@ -29,7 +35,7 @@ class Register extends Component {
             Swal.fire({
                 type: 'error',
                 title: 'Error!',
-                text: 'It Appears That One Or More Fields Is Empty.',
+                text: 'It appears that one or more fields is empty.',
                 timer: 4000
             })
         }

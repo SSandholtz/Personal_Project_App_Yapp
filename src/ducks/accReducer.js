@@ -171,7 +171,7 @@ export default function reducer(state = initialState, action) {
         case REGISTER + '_PENDING':
             return { ...state, loading: true }
         case REGISTER + '_FULFILLED':
-            return { ...state, loggedIn: action.payload, account: { ...state.account, ...action.payload }, loading: false }
+            return { ...state, account: { ...state.account, ...action.payload }, loading: false }
 
         // Login Account
         case LOGIN + '_PENDING':

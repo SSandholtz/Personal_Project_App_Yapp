@@ -13,13 +13,23 @@ class IndexEntryBlock extends Component {
             letter: props.letter,
         }
     }
+
+    filterApps (apps) {
+        let filteredApps = []
+        for (let i = 0; i < apps.length; i++) {
+            if (apps[i].visibility) {
+                filteredApps.push(apps[i])
+                return filteredApps
+            }
+        }
+    }
     
     render () {
         const { apps } = this.props.appReducer
-        const Entries = apps.length ? apps.filter(app => app.app_name.charAt(0) === this.props.letter ).map(app => {
+        const Entries = apps.length ? apps.filter(app => app.app_name.charAt(0) === this.props.letter && app.visibility ).map(app => {
             return <IndexEntry app={app} />
         }) : null
-        
+        console.log(apps)
         return (
             <div className="indexEntryBlock">
                 <h1 className="blockLetter"> {this.state.letter} </h1>

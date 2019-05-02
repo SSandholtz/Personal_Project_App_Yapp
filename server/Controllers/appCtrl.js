@@ -5,6 +5,7 @@ module.exports = {
         const upperCaseName = app_name.toUpperCase()
         const db = req.app.get('db')
         let app = await db.create_app([ company_name, upperCaseName, app_download_link, app_logo])
+        console.log(app)
         res.status(200).send(app)
     },
 
@@ -42,6 +43,14 @@ module.exports = {
         const db = req.app.get('db')
         let getAppAnalytics = await db.get_app_analytics([app_id])
         res.status(200).send(getAppAnalytics)
+    },
+
+    changePrivacy: async (req, res) => {
+        const { app_id } = req.body
+        const db = req.app.get('db')
+        let newPrivacyStatus = await db.change_privacy([app_id])
+        console.log(newPrivacyStatus)
+        res.status(200).send(newPrivacyStatus)
     },
     
     deleteApp: async (req, res) => {

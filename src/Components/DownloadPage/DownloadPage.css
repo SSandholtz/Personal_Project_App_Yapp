@@ -76,5 +76,9 @@
     .downloadPageContainer {
         padding-left: 150px;
         padding-right: 150px;
-    }   
+    } 
+
+    .downloadButton {
+        width: 20%;
+    }
 }

@@ -32,6 +32,7 @@ class AppIndex extends Component {
         this.props.searchApps(app_name)
     }
 
+
     createBlocks (app_name, startingLetters) {
         if (app_name === '') {
             const EntryBlocks = startingLetters.length ? startingLetters.map(letter => {

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import './AccApp.css'
 import Swal from 'sweetalert2'
 import { deleteApp } from '../../ducks/accReducer'
+import { changePrivacy } from '../../ducks/appReducer'
 
 class AccApp extends Component {
     constructor (props) {
@@ -14,6 +15,17 @@ class AccApp extends Component {
             publicOrPrivate: false,
             app_logo: props.appReducer.app.app_logo
         }
+    }
+
+    componentDidMount () {
+        this.setState({
+            publicOrPrivate: this.props.appReducer.app.visibility
+        })
+    }
+
+    handlePrivacy (app_id, publicOrPrivate) {
+        this.props.changePrivacy(app_id)
+        this.setState({publicOrPrivate: !publicOrPrivate})
     }
 
     handleDelete (app_id) {
@@ -48,9 +60,9 @@ class AccApp extends Component {
                     <div className="accAppButtonsContainer">
                         <button
                             className="accAppButtons"
-                            onClick={() => this.setState({publicOrPrivate: !publicOrPrivate})}
+                            onClick={() => this.handlePrivacy(app_id, publicOrPrivate)}
                         >
-                            { publicOrPrivate ? 'Public' : 'Private'}
+                            { publicOrPrivate ? 'Make Private' : 'Go Public'}
                         </button>
                         <button className="accAppButtons" 
                         onClick={
@@ -85,4 +97,4 @@ class AccApp extends Component {
 
 const mapState = (reduxState) => reduxState
 
-export default connect( mapState, { deleteApp } ) (AccApp)
+export default connect( mapState, { deleteApp, changePrivacy } ) (AccApp)

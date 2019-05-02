@@ -18,7 +18,6 @@ import './App.css';
 class App extends Component {
 
   render() {
-
     let loadingAnimation = () => {
       if (this.props.accReducer.loading === true) {
         return (
@@ -50,7 +49,6 @@ class App extends Component {
       <Route path="/Register" component={Register} />
       <Route path="/Login" component={Login} />
       <Route path="/AppIndex" component={AppIndex} />
-      <Route path="/AccHomePage" component={AccHomePage} />
       <Route path={`/DownloadPage/:id`} component={DownloadPage} />
       <Route path={`/ProfilePage/:id`} component={ProfilePage} />
       <Route path={`/AppAnalytics/:id`} component={AppAnalytics} />

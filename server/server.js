@@ -42,7 +42,7 @@ app.get('/api/analytics', appCtrl.getAppAnalytics)
 app.get('/api/getAllAppStartingLetters', appCtrl.getAllAppsStartingLetters)
 
 app.put('/api/account', accCtrl.updateAccInfo)
-// app.put('/api/app', appCtrl.updateAppDetails)
+app.put('/api/app', appCtrl.changePrivacy)
 // app.put('/api/feedback', appCtrl.updateFeedback)
 
 app.delete(`/api/accApp`, appCtrl.deleteApp)
